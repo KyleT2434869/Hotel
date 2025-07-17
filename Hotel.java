@@ -1,7 +1,7 @@
 public class Hotel {
-    Room standard;
-    Room deluxe;
-    Room suite;
+    private Room standard;
+    private Room deluxe;
+    private Room suite;
 
     public Hotel() {
         standard.setValues(100, 1, 250);
