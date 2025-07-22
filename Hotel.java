@@ -9,5 +9,7 @@ public class Hotel {
         suite.setValues(5, 5, 1000);
 
          System.out.println(" Hotel configuration updated by pushpak");
+
+         System.out.println("Second update: Print statement added");
     }
 }
