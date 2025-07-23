@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch JavaFX App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "hotel frontend1_6e2a2dcd",
+      "vmArgs": "--module-path \"C:/java/javafx-sdk-24.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}
