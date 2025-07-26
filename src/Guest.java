@@ -1,20 +1,3 @@
-/*
-UML Diagram
-
-Guest
-
-- name : String
-- email : String
-- id : int
-- partySize : int
-
-+ Guest(name : String, email : String, partySize : int)
-+ getName() : String : final
-+ getEmail() : String : final
-+ getPartSize() : int : final
-+ printInfo() : void
- */
-
 public class Guest {
     private String name;
     private String email;
@@ -35,5 +18,8 @@ public class Guest {
     }
     public final int getId() {
         return id;
+    }
+    public final int getPartySize() {
+        return partySize;
     }
 }
