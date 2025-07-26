@@ -1,9 +1,8 @@
 public class Standard extends Hotel {
-    String roomType;
-    double price;
-
-    Standard(String roomType, double price) {
-        roomType = "Standard";
-        price = 100.00;
+    public String getRoomType() {
+        return "Standard";
+    }
+    public double getPrice() {
+        return 100.00;
     }
 }

@@ -1,15 +1,5 @@
-public class Hotel {
-    Guest guest;
-    String roomType;
-    double price;
+public abstract class Hotel {
+    public abstract String getRoomType();
+    public abstract double getPrice();
 
-    Hotel(Guest guest) {
-        this.guest = guest;
-    }
-    public String getRoomType() {
-        return roomType;
-    }
-    public double getPrice() {
-        return price;
-    }
 }

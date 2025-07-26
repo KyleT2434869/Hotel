@@ -1,9 +1,8 @@
-public class Deluxe extends Hotel{
-    String roomType;
-    double price;
-
-    Deluxe(String roomType, double price) {
-        roomType = "Standard";
-        price = 150.00;
+public class Deluxe extends Hotel {
+    public String getRoomType() {
+        return "Deluxe";
+    }
+    public double getPrice() {
+        return 150.00;
     }
 }

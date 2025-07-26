@@ -1,9 +1,8 @@
 public class Suite extends Hotel {
-    String roomType;
-    double price;
-
-    Suite(String roomType, double price) {
-        roomType = "Standard";
-        price = 200.00;
+    public String getRoomType() {
+        return "Suite";
+    }
+    public double getPrice() {
+        return 200.00;
     }
 }
