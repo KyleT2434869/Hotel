@@ -17,10 +17,9 @@ public class Hotel {
     String roomType;
     double price;
 
+    Hotel() {}
     Hotel(Guest guest, String roomType, double price) {
         this.guest = guest;
-        this.roomType = roomType;
-        this.price = price;
     }
     public String getRoomType() {
         return roomType;
