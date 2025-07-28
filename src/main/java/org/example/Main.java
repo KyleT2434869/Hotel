@@ -110,8 +110,8 @@ public class Main {
                 " partySize INTEGER NOT NULL);";
         try {
             java.sql.Statement stmt = con.createStatement();
-                stmt.execute(table);
-                System.out.println("Table created");
+            stmt.execute(table);
+            System.out.println("Table created");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
