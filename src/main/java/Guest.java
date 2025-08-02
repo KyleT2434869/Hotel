@@ -1,38 +1,33 @@
 public class Guest {
     private String name;
-    private int partySize;
     private String email;
+    private int partySize;
     private String roomType;
     private Payment payment;
 
-    public Guest(String s1, String u1) {
-        this.name = s1;
-        this.email = u1;
+    public Guest(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
+    public Guest(String name, String email, int partySize) {
+        this.name = name;
+        this.email = email;
+        this.partySize = partySize;
 
-    public Guest(String s1, String s2, int num) {
-        this.email = s1;
-        this.partySize = num;
-        this.name = s2;
     }
-
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
     public String getName() {
-        return this.name;
+        return name;
     }
-
-    public int getPartySize() {
-        return this.partySize;
-    }
-
     public String getEmail() {
-        return this.email;
+        return email;
     }
-
-    public void setRoomType(String s) {
-        this.roomType = s;
+    public int getPartySize() {
+        return partySize;
     }
-
     public String getRoomType() {
-        return this.roomType;
+        return roomType;
     }
 }
