@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class ReservationManager {
@@ -187,16 +189,45 @@ public class ReservationManager {
         }
     }
     public void printReservationInfo(Reservations reservations) {
-        System.out.println(reservations.getGuest().getName() + " "
-                + reservations.getGuest().getEmail() + " "
-                + reservations.getGuest().getPartySize() + " "
-                + reservations.getRoom().getRoomType() + " "
-                + reservations.getCheckIn() + " "
-                + reservations.getCheckOut() + " "
-                + reservations.getRoom().getPrice() + " "
-                + reservations.getRoom().getPrice() // * numDays
-        );
+        try {
+            if (con == null || con.isClosed())
+                con = connect();
+
+            PreparedStatement prst = con.prepareStatement("SELECT guest.id, guest.name, guest.partySize, guest.checkIn, guest.checkOut, rm.roomTyoe, rm.price FROM Reservation guest JOIN Room rm ON guest.room_num = rm.id WHERE r.id = ?");
+            prst.setString(1, reservations.getGuest().getEmail());
+            ResultSet rs = prst.executeQuery();
+
+            if (!rs.next())
+                System.out.println("Reservation not found.");
+
+            String email = rs.getString("guest.id");
+            String name = rs.getString("guest.name");
+            int partySize = rs.getInt("guest.partySize");
+            String checkIn = rs.getString("guest.checkIn");
+            String checkOut = rs.getString("guest.checkOut");
+            String roomType = rs.getString("rm.roomTyoe");
+            double price = rs.getInt("rm.price");
+
+            LocalDate checkInDate = LocalDate.parse(checkIn);
+            LocalDate checkOutDate = LocalDate.parse(checkOut);
+            long nights = ChronoUnit.DAYS.between(checkInDate, checkOutDate);
+
+            System.out.println(name);
+            System.out.println(email);
+            System.out.println(partySize);
+            System.out.println(roomType);
+            System.out.println(price);
+            System.out.println(checkInDate);
+            System.out.println(checkOutDate);
+            System.out.println(nights);
+            System.out.println(price * nights);
+
+            rs.close();
+            prst.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Unable to update reservation. " + e.getMessage());
+            e.printStackTrace();
+        }
     }
-
-
 }
