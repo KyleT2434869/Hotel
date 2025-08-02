@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Scanner;
 
 public class ReservationController {
 
@@ -32,7 +33,7 @@ public class ReservationController {
             prst.setString(2, reservations.getGuest().getName());
             prst.setInt(3, reservations.getGuest().getPartySize());
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
             prst.setString(4, formatter.format(reservations.getCheckIn())); // in progress
             prst.setString(5, formatter.format(reservations.getCheckOut())); // in progress
             prst.executeUpdate();
@@ -77,6 +78,111 @@ public class ReservationController {
 
         } catch (SQLException e) {
             System.out.println("Unable to make reservation. " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    public void updateReservation(Reservations reservations) {
+        try {
+            if (con == null || con.isClosed())
+                con = connect();
+
+            int selection;
+
+            Scanner keyboard = new Scanner(System.in);
+
+            System.out.println("Update: ");
+            System.out.println("1. Email");
+            System.out.println("2. Name");
+            System.out.println("3. Party Size");
+            System.out.println("4. Room");
+            System.out.println("5. Check In Date");
+            System.out.println("6. Check Out  Date");
+            System.out.println("7. Exit");
+            System.out.print("Select an option: ");
+            selection = keyboard.nextInt();
+            keyboard.nextLine();
+
+            switch (selection) {
+                case 1:
+                    System.out.println("Enter new email: ");
+                    String newEmail = keyboard.next();
+
+                    PreparedStatement prst = con.prepareStatement("UPDATE" + reservations.getGuest().getEmail() + " SET guest_id WHERE id = ?");
+                    prst.setString(1, newEmail);
+                    prst.executeUpdate();
+
+                    break;
+                case 2:
+                    System.out.println("Enter new name: ");
+                    String newName = keyboard.next();
+
+                    prst = con.prepareStatement("UPDATE" + reservations.getGuest().getName() + " SET guest_id WHERE id = ?");
+                    prst.setString(1, newName);
+                    prst.executeUpdate();
+
+                    break;
+                case 3:
+                    System.out.println("Enter new party size: ");
+                    String newPartySize = keyboard.next();
+
+                    prst = con.prepareStatement("UPDATE" + reservations.getGuest().getPartySize() + " SET guest_id WHERE id = ?");
+                    prst.setString(1, newPartySize);
+                    prst.executeUpdate();
+
+                    break;
+                case 4:
+                    System.out.println("Enter new room: ");
+                    String newRoom = keyboard.next();
+
+                    // Find available room of new type
+                    prst = con.prepareStatement("SELECT id FROM Room WHERE roomType = ? AND occupied = 0 LIMIT 1");
+                    prst.setString(1, newRoom);
+                    ResultSet rs = prst.executeQuery();
+
+                    if (!rs.next())
+                        System.out.println("No " + newRoom + " rooms available.");
+
+                    // Updates room type for room object
+                    prst = con.prepareStatement("UPDATE" + reservations.getRoom().getRoomType() + " SET room_id WHERE id = ?");
+                    prst.setString(1, newRoom);
+                    prst.executeUpdate();
+
+                    // Update reservation db with new room
+                    prst = con.prepareStatement("UPDATE Reservation SET room_id WHERE id = ?");
+                    prst.setString(1, newRoom);
+                    prst.executeUpdate();
+
+                    // Free old room
+                    // Occupy new room
+
+                    break;
+                case 5:
+                    System.out.println("Enter new check in date (YYYY-MM-DD): ");
+                    String newCheckIn = keyboard.next();
+
+                    PreparedStatement prst = con.prepareStatement("UPDATE" + reservations.getCheckIn() + " SET checkIn WHERE id = ?");
+                    prst.setString(1, newCheckIn);
+                    prst.executeUpdate();
+
+                    break;
+                case 6:
+                    System.out.println("Enter new check out date (YYYY-MM-DD): ");
+                    String newCheckout = keyboard.next();
+
+                    PreparedStatement prst = con.prepareStatement("UPDATE" + reservations.getCheckOut() + " SET checkOut WHERE id = ?");
+                    prst.setString(1, newCheckout);
+                    prst.executeUpdate();
+
+                    break;
+                case 7:
+                    System.out.println("Exiting update");
+                    break;
+                default:
+                    System.out.println("Invalid selection.");
+            }
+            System.out.println("Reservation updated.");
+        } catch (SQLException e) {
+            System.out.println("Unable to update reservation. " + e.getMessage());
             e.printStackTrace();
         }
     }
