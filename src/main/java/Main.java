@@ -1,7 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +19,7 @@ public class Main {
         Guest guest;
         Room room = null;
         Reservations reservation;
-        ReservationController reserve = new ReservationController();
+        ReservationManager reserve = new ReservationManager();
 
         Scanner keyboard = new Scanner(System.in);
 
