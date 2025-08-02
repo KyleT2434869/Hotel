@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class ReservationController {
+public class ReservationManager {
 
     Connection con;
 
