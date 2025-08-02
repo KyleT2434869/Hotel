@@ -4,9 +4,19 @@ public class Guest {
     private int partySize;
 
     Guest(String name, String email, int partySize) {
+        setName(name);
+        setEmail(email);
+        setPartySize(partySize);
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.email = email;
-        this.partySize = partySize;
+    }
+    public void setEmail(String email) {
+            this.email = email;
+    }
+    public void setPartySize(int partySize) {
+            this.partySize = partySize;
     }
     public final String getName() {
         return name;
@@ -16,10 +26,5 @@ public class Guest {
     }
     public final int getPartySize() {
         return partySize;
-    }
-    public void printInfo() {
-        System.out.println("Guest Name: " + name);
-        System.out.println("Guest Email: " + email);
-        System.out.println("Guest Party Size: " + partySize);
     }
 }
