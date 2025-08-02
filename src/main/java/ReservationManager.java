@@ -188,6 +188,7 @@ public class ReservationManager {
             e.printStackTrace();
         }
     }
+    // could be used for conformation email/message
     public void printReservationInfo(Reservations reservations) {
         try {
             if (con == null || con.isClosed())
