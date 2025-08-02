@@ -1,19 +1,18 @@
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Reservations {
     private Guest guest;
     private Room room;
-    private String checkIn;
-    private String checkOut;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
 
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-
-    public Reservations(Guest guest, Room room, String checkIn, String checkOut) {
+    public Reservations(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut) {
         this.guest = guest;
         this.room = room;
-        this.checkIn = formatter.format(checkIn);
-        this.checkOut = formatter.format(checkOut);
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
     }
     public Guest getGuest() {
         return guest;

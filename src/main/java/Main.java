@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -13,8 +14,6 @@ public class Main {
         String roomType;
         int partySize;
         int selection;
-        String checkIn;
-        String checkOut;
 
         Guest guest;
         Room room = null;
@@ -56,26 +55,29 @@ public class Main {
             }
 
             System.out.print("Please enter your check in date (dd-MM-yyyy): ");
-            checkIn = keyboard.nextLine();
+            String checkIn = keyboard.nextLine();
             System.out.print("Please enter your check out date (dd-MM-yyyy): ");
-            checkOut = keyboard.nextLine();
+            String checkOut = keyboard.nextLine();
+
+            LocalDate checkInDate = LocalDate.parse(checkIn);
+            LocalDate checkOutDate = LocalDate.parse(checkOut);
 
             switch (selection) {
                 case 1:
-                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reservation = new Reservations(guest, room, checkInDate, checkOutDate);
                     reserve.addReservation(reservation);
 
                     break;
                 case 2:
-                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reservation = new Reservations(guest, room, checkInDate, checkOutDate);
                     reserve.cancelReservation(reservation);
                     break;
                 case 3:
-                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reservation = new Reservations(guest, room, checkInDate, checkOutDate);
                     reserve.updateReservation(reservation);
                     break;
                 case 4:
-                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reservation = new Reservations(guest, room, checkInDate, checkOutDate);
                     reserve.printReservationInfo(reservation);
                     break;
                 case 5:
