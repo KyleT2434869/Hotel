@@ -1,6 +1,4 @@
-package org.example;
-
-public class Standard extends Hotel {
+public class Standard extends Room {
     public String getRoomType() {
         return "Standard";
     }

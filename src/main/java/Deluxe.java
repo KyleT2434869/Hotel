@@ -1,6 +1,4 @@
-package org.example;
-
-public class Deluxe extends Hotel {
+public class Deluxe extends Room {
     public String getRoomType() {
         return "Deluxe";
     }

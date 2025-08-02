@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dcea9c08-dabd-42b7-8954-baae3764bccc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Deluxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Hotel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Standard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Standard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Suite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Suite.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home/lib/src.zip!/java.sql/java/sql/PreparedStatement.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="30PCinhuu7phT7lLV10g78vphFR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;scrum29-2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/xiomaragamez/Desktop/hotel/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcea9c08-dabd-42b7-8954-baae3764bccc" name="Changes" comment="" />
+      <created>1753519950539</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753519950539</updated>
+      <workItem from="1753519951662" duration="42000" />
+      <workItem from="1753520001360" duration="71000" />
+      <workItem from="1753520078834" duration="90000" />
+      <workItem from="1753520176520" duration="458000" />
+      <workItem from="1753520643773" duration="195000" />
+      <workItem from="1753520863056" duration="4999000" />
+      <workItem from="1753554150818" duration="8000" />
+      <workItem from="1753554178677" duration="5000" />
+      <workItem from="1753554195276" duration="7000" />
+      <workItem from="1753554217630" duration="6000" />
+      <workItem from="1753554567580" duration="59000" />
+      <workItem from="1753557245139" duration="4777000" />
+      <workItem from="1753562061453" duration="1078000" />
+      <workItem from="1753563147886" duration="514000" />
+      <workItem from="1753563676639" duration="6000" />
+      <workItem from="1753564038603" duration="495000" />
+      <workItem from="1753564673878" duration="4387000" />
+      <workItem from="1753581742887" duration="203000" />
+      <workItem from="1753582529993" duration="990000" />
+      <workItem from="1753583531065" duration="5000" />
+      <workItem from="1753583575185" duration="13000" />
+      <workItem from="1753583806164" duration="8000" />
+      <workItem from="1753583920092" duration="7000" />
+      <workItem from="1753583931800" duration="15000" />
+      <workItem from="1753584036859" duration="6000" />
+      <workItem from="1753584854959" duration="22000" />
+      <workItem from="1753585462446" duration="162000" />
+      <workItem from="1753585737876" duration="1360000" />
+      <workItem from="1753668852991" duration="5000" />
+      <workItem from="1753668907468" duration="16000" />
+      <workItem from="1753668957723" duration="229000" />
+      <workItem from="1753669218821" duration="7000" />
+      <workItem from="1753670443202" duration="505000" />
+      <workItem from="1753671259911" duration="25000" />
+      <workItem from="1753671322681" duration="26000" />
+      <workItem from="1753671474148" duration="1680000" />
+      <workItem from="1753750896108" duration="244000" />
+      <workItem from="1753751146411" duration="85000" />
+      <workItem from="1753845721412" duration="193000" />
+      <workItem from="1754096644507" duration="500000" />
+      <workItem from="1754097752509" duration="12443000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

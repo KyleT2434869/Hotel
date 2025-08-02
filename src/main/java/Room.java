@@ -1,4 +1,4 @@
-public abstract class Hotel {
+public abstract class Room {
     private int roomNumber;
 
     public abstract String getRoomType();

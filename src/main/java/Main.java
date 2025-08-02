@@ -1,5 +1,3 @@
-package org.example;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,7 +15,7 @@ public class Main {
         int selection;
 
         Guest guest;
-        Hotel room = null;
+        Room room = null;
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -83,7 +81,7 @@ public class Main {
     public static void Menu() {
         System.out.println("Menu");
         System.out.println("1. Make Reservation");
-        System.out.println("2. Delete Reservation");
+        System.out.println("2. Cancel Reservation");
         System.out.println("3. Update Reservation");
         System.out.println("4. View All Reservations");
         System.out.println("5. Exit");
@@ -116,45 +114,4 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-    public static void insert(Guest guest, Hotel room, String url) {
-        String addGuest = "INSERT INTO guests (name, email, roomType, partySize) VALUES (?, ?, ?, ?);";
-
-        try {
-            java.sql.PreparedStatement pstmt = con.prepareStatement(addGuest);
-            pstmt.setString(1, guest.getName());
-            pstmt.setString(2, guest.getEmail());
-            pstmt.setString(3, room.getRoomType());
-            pstmt.setInt(4, guest.getPartySize());
-            pstmt.executeUpdate();
-            System.out.println("Inserted guest");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-    public static void delete(String nameEmail, String url) {
-        String deleteGuest = "DELETE FROM guests WHERE name = ? OR email = ?";
-
-        try {
-            java.sql.PreparedStatement pstmt = con.prepareStatement(deleteGuest);
-            pstmt.setString(1, nameEmail);
-            pstmt.setString(2, nameEmail);
-
-            int rows = pstmt.executeUpdate();
-
-            if (rows > 0) {
-                System.out.println("Guest(s) deleted successfully.");
-            } else {
-                System.out.println("No guest found with that name or email.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error deleting guest: " + e.getMessage());
-        }
-    }
-    public static void update(String url) {
-
-    }
-    public static void viewAllReservations(String url) {
-
-    }
-
 }
