@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -13,9 +14,13 @@ public class Main {
         String roomType;
         int partySize;
         int selection;
+        String checkIn;
+        String checkOut;
 
         Guest guest;
         Room room = null;
+        Reservations reservation;
+        ReservationController reserve = new ReservationController();
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -27,48 +32,52 @@ public class Main {
             selection = keyboard.nextInt();
             keyboard.nextLine();
 
+            System.out.print("Please enter your name: ");
+            name = keyboard.nextLine();
+
+            System.out.print("Please enter your email: ");
+            email = keyboard.nextLine();
+
+            System.out.print("Please enter your party size: ");
+            partySize = keyboard.nextInt();
+            keyboard.nextLine();
+
+            guest = new Guest(name, email, partySize);
+
+            System.out.print("Please enter your desired room type (Standard, Deluxe, Suite): ");
+            roomType = keyboard.nextLine();
+            if (roomType.equalsIgnoreCase("Standard")) {
+                room = new Standard();
+            } else if (roomType.equalsIgnoreCase("Deluxe")) {
+                room = new Deluxe();
+            } else if (roomType.equalsIgnoreCase("Suite")) {
+                room = new Suite();
+            } else {
+                System.out.println("Invalid room type");
+            }
+
+            System.out.print("Please enter your check in date (dd-MM-yyyy): ");
+            checkIn = keyboard.nextLine();
+            System.out.print("Please enter your check out date (dd-MM-yyyy): ");
+            checkOut = keyboard.nextLine();
+
             switch (selection) {
                 case 1:
-                    System.out.print("Please enter your name: ");
-                    name = keyboard.nextLine();
+                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reserve.addReservation(reservation);
 
-                    System.out.print("Please enter your email: ");
-                    email = keyboard.nextLine();
-
-                    System.out.print("Please enter your party size: ");
-                    partySize = keyboard.nextInt();
-                    keyboard.nextLine();
-
-                    guest = new Guest(name, email, partySize);
-
-                    System.out.print("Please enter your desired room type (Standard, Deluxe, Suite): ");
-                    roomType = keyboard.nextLine();
-                    if (roomType.equalsIgnoreCase("Standard")) {
-                        room = new Standard();
-                    } else if (roomType.equalsIgnoreCase("Deluxe")) {
-                        room = new Deluxe();
-                    } else if (roomType.equalsIgnoreCase("Suite")) {
-                        room = new Suite();
-                    } else {
-                        System.out.println("Invalid room type");
-                    }
-                    insert(guest, room, url);
                     break;
                 case 2:
-                    System.out.print("Please enter name or email used for booking: ");
-                    String nameEmail = keyboard.nextLine();
-                    delete(nameEmail, url);
+                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reserve.cancelReservation(reservation);
                     break;
                 case 3:
-                    // Ask what they would like to change
-                    // another menu
-                    // loop until done with changes
+                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reserve.updateReservation(reservation);
                     break;
                 case 4:
-                    // print out all guest information/report
-                    // name, email, party size
-                    // room type, room number, cost per night, total cost
-                    // check-in check-out dates and times
+                    reservation = new Reservations(guest, room, checkIn, checkOut);
+                    reserve.printReservationInfo(reservation);
                     break;
                 case 5:
                     System.exit(0);
