@@ -1,5 +1,3 @@
-package org.example;
-
 public abstract class Hotel {
     private int roomNumber;
 
