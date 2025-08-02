@@ -157,7 +157,7 @@ public class ReservationController {
 
                     break;
                 case 5:
-                    System.out.println("Enter new check in date (YYYY-MM-DD): ");
+                    System.out.println("Enter new check in date (dd-MM-yyyy): ");
                     String newCheckIn = keyboard.next();
 
                     PreparedStatement prst = con.prepareStatement("UPDATE" + reservations.getCheckIn() + " SET checkIn WHERE id = ?");
@@ -166,7 +166,7 @@ public class ReservationController {
 
                     break;
                 case 6:
-                    System.out.println("Enter new check out date (YYYY-MM-DD): ");
+                    System.out.println("Enter new check out date (dd-MM-yyyy): ");
                     String newCheckout = keyboard.next();
 
                     PreparedStatement prst = con.prepareStatement("UPDATE" + reservations.getCheckOut() + " SET checkOut WHERE id = ?");
