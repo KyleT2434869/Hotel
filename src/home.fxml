@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+   <children>
+      <ImageView fitHeight="408.0" fitWidth="600.0" layoutY="-2.0" opacity="0.7" pickOnBounds="true">
+         <image>
+            <Image url="@resources/images/beachflowers.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="loginMainButton" layoutX="340.0" layoutY="245.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: PINK;" text="Login">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="signupMainButton" layoutX="410.0" layoutY="245.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: PINK;" text="Sign Up">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="322.0" layoutY="85.0" text="4 SEASONS &#10;HOTEL&#10;&amp;&#10;RESORT" textAlignment="CENTER" textFill="#38942e">
+         <font>
+            <Font name="Comic Sans MS Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="14.0" text="HOME" textFill="#38942e" underline="true">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="389.0" layoutY="14.0" text="CONTACTS" textFill="#38942e" underline="true">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="513.0" layoutY="14.0" text="REVIEWS" textFill="#38942e" underline="true">
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
