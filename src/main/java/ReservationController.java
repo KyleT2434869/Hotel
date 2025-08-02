@@ -186,4 +186,15 @@ public class ReservationController {
             e.printStackTrace();
         }
     }
+    public void printReservationInfo(Reservations reservations) {
+        System.out.println(reservations.getGuest().getName() + " "
+                + reservations.getGuest().getEmail() + " "
+                + reservations.getGuest().getPartySize() + " "
+                + reservations.getRoom().getRoomType() + " "
+                + reservations.getCheckIn() + " "
+                + reservations.getCheckOut() + " "
+                + reservations.getRoom().getPrice() + " "
+                + reservations.getRoom().getPrice() // * numDays
+        );
+    }
 }
