@@ -1,3 +1,5 @@
+package BackEnd;
+
 public class Reservation {
     private Guest guest;
     private Hotel room;

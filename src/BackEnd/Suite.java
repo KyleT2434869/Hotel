@@ -1,3 +1,5 @@
+package BackEnd;
+
 public class Suite extends Hotel{
     public String getRoomType(){
         return "Suite";

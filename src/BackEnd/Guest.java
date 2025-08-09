@@ -1,3 +1,5 @@
+package BackEnd;
+
 public class Guest {
     private String name;
     private String email;

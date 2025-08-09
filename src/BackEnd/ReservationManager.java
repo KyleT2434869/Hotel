@@ -1,3 +1,5 @@
+package BackEnd;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -36,7 +38,6 @@ public class ReservationManager {
                             return new Reservation(guest, room, checkIn,checkOut);
                         }
                     }
-                    
                 }
             }
         }

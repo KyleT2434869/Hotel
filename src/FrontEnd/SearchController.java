@@ -1,3 +1,5 @@
+package FrontEnd;
+import BackEnd.*;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -37,6 +39,7 @@ public class SearchController {
        DisplayController displayController = loader.getController();
        displayController.setGuest(this.guest);
        displayController.setOldReservation(this.oldReservation);
+       displayController.display();
 
        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
        scene = new Scene(root);
